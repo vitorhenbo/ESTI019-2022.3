@@ -13,8 +13,11 @@
     padding: 0 2%;
 }
 
-html,body{
+html, body {
     height: 100%;
+}
+
+.homepage {
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -107,6 +110,20 @@ section.sobre{
     /* height: 30px; */
     cursor: pointer;
     text-decoration: none;
-    padding: 5px 5px;
+    padding: 5px 15px;
     font-size: 10pt;
+}
+
+.link-lab:hover {
+    background-color: #2eb8ac;
+}
+
+pre {
+    background: wheat;
+    padding: 10px 25px;
+    /* font-style: italic; */
+    font-family: monospace;
+    font-size: 11pt;
+    color: darkslategrey;
+    width: 50%;
 }

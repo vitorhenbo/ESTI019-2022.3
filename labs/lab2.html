@@ -1,13 +1,50 @@
-<h1>Laboratório 2</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<p>Vídeo Lento</p>
-<video width="500px" src="../assets/output2.mp4" controls></video>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório 2</title>
+    <link href="../css/style.css" rel="stylesheet" />
+</head>
 
-<p>Comando Utilizado:</p>
-<pre>ffmpeg -i video-lento.mp4 -vf "scale=iw/2:ih/2" output2.mp4</pre>
+<body>
+    <h1>Laboratório 2</h1>
 
-<p>Vídeo Rápido</p>
-<video width="500px"src="../assets/output4.mp4" controls></video>
+    <p>Fotos Originais Combinadas</p>
+    <img width="1000px" src="../assets/rangers_original.png" alt="" />
 
-<p>Comando Utilizado:</p>
-<pre>ffmpeg -i video-rapido.mp4 -vf "scale=iw/4:ih/4" output4.mp4</pre>
+    <p>Foto em Preto e Branco</p>
+    <img width="1000px" src="../assets/rangers_grey.png" alt="" />
+    <pre>img_gray = cv.imread(os.path.join(image_path,'rangers_original.png'), cv.IMREAD_GRAYSCALE)
+cv2_imshow(img_gray)</pre>
+
+    <p>Foto com resolução x1.25</p>
+    <img width="1250px" src="../assets/rangers_grey_125.png" alt="" />
+<pre>print(img_gray.shape)
+img2 = cv.resize(img_gray, None, fx=1.25, fy=1.25, interpolation = cv.INTER_CUBIC)
+print(img2.shape)
+cv2_imshow(img2)</pre>
+
+    <p>Foto com resolução x0.75</p>
+    <img width="750px" src="../assets/rangers_grey_75.png" alt="" />
+    <pre>print(img_gray.shape)
+img2 = cv.resize(img_gray, None, fx=0.75, fy=0.75, interpolation = cv.INTER_CUBIC)
+print(img2.shape)
+cv2_imshow(img2)</pre>
+
+    <p>Vídeo Lento</p>
+    <video width="600px" src="../assets/output2.mp4" controls></video>
+
+    <p>Comando Utilizado:</p>
+    <pre>ffmpeg -i video-lento.mp4 -vf "scale=iw/2:ih/2" output2.mp4</pre>
+
+    <p>Vídeo Rápido</p>
+    <video width="600px" src="../assets/output4.mp4" controls></video>
+
+    <p>Comando Utilizado:</p>
+    <pre>ffmpeg -i video-rapido.mp4 -vf "scale=iw/4:ih/4" output4.mp4</pre>
+</body>
+
+</html>
