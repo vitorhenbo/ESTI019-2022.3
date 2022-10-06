@@ -119,13 +119,15 @@ section.sobre{
 }
 
 pre {
-    background: wheat;
-    padding: 10px 25px;
+    /*background: wheat;*/
+	background: #3da199;
+    padding: 10px 10px;
     /* font-style: italic; */
     font-family: monospace;
     font-size: 11pt;
-    color: darkslategrey;
-    width: 50%;
+    /*color: darkslategrey;*/
+	color: #FFFFFF;
+    width: 40%;
 }
 
 .black-white {
