@@ -12,6 +12,11 @@
 <body>
     <h1>Laboratório 2</h1>
     <div>
+        <h3>Apresentação do Site</h3>
+        <p>Esse vídeo foi gravado na câmera profissional</p>
+        <video width="600px" src="../assets/lab2/VideoCamera.mp4" controls></video>
+    </div>
+    <div>
         <h3>Fotos combinadas</h3>
         <p>Essas fotos foram tiradas com o celular  e a montagem foi feita pelo photoshop</p>
         <img width="600px" src="../assets/lab2/MontagemArthur.jpg" alt="" />
@@ -32,6 +37,12 @@
         </pre>
         <img width="600px" src="../assets/lab2/group.JPG" alt="" />
         <img width="600px" class="black-white" src="../assets/lab2/group.JPG" alt="" />
+    </div>
+
+    <div>
+        <h3>Montagem grupo todo</h3>
+        <img width="600px" src="../assets/lab2/Montagem Grupo.jpg" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/Montagem Grupo.jpg" alt="" />
     </div>
 
     <div>
@@ -65,22 +76,21 @@
         <img width="600px" src="../assets/lab2/VitorCel_PB.jpg" alt="" />
     </div>
 
-    <p>Foto com resolução x1.25</p>
-    <img width="1250px" src="../assets/rangers_grey_125.png" alt="" />
-<pre>print(img_gray.shape)
-img2 = cv.resize(img_gray, None, fx=1.25, fy=1.25, interpolation = cv.INTER_CUBIC)
-print(img2.shape)
-cv2_imshow(img2)</pre>
+    <div>
+        <h3>Foto com resolução 50%</h3>
+        <p>Essa foto foi tirada com uma camera profissional e qualidade foi reduzida posteriormente</p>
+        <img width="600px" src="../assets/lab2/GrupoCam 50.jpg" alt="" />
+    </div>
 
-    <p>Foto com resolução x0.75</p>
-    <img width="750px" src="../assets/rangers_grey_75.png" alt="" />
-    <pre>print(img_gray.shape)
-img2 = cv.resize(img_gray, None, fx=0.75, fy=0.75, interpolation = cv.INTER_CUBIC)
-print(img2.shape)
-cv2_imshow(img2)</pre>
+    <div>
+        <h3>Foto com resolução 25%</h3>
+        <p>Essa foto foi tirada com uma camera profissional e qualidade foi reduzida posteriormente</p>
+        <img width="600px" src="../assets/lab2/GrupoCam 25.jpg" alt="" />
+    </div>
+
 
     <p>Vídeo Lento</p>
-    <video width="600px" src="../assets/output2.mp4" controls></video>
+    <video width="600px" src="../assets/lab2/VideoCamera.mp4" controls></video>
 
     <p>Comando Utilizado:</p>
     <pre>ffmpeg -i video-lento.mp4 -vf "scale=iw/2:ih/2" output2.mp4</pre>
