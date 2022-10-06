@@ -27,18 +27,18 @@ html, body {
     padding: 20px 0;
 }
 
-.logo{  
+.logo{
     width: 50%;
 }
 
-.smartphone{  
+.smartphone{
     position: absolute;
     width: 70%;
     right: 500px;
     top: -50px;
 }
 
-.pessoal{  
+.pessoal{
     position: absolute;
     width: 50%;
     right: 500px;
@@ -46,7 +46,7 @@ html, body {
 }
 
 .menu{
-    
+
     padding-top: 30px;
     width: 50%;
     text-align: right;
@@ -126,4 +126,9 @@ pre {
     font-size: 11pt;
     color: darkslategrey;
     width: 50%;
+}
+
+.black-white {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }

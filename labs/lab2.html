@@ -11,14 +11,43 @@
 
 <body>
     <h1>Laboratório 2</h1>
+    <div>
+        <h3>Fotos Combinadas</h3>
+    </div>
 
-    <p>Fotos Originais Combinadas</p>
-    <img width="1000px" src="../assets/rangers_original.png" alt="" />
+    <div>
+        <h3>Fotos do Grupo todo</h3>
+        <p>Essa foto foi tirada com uma camera profissional e o preto e branco foi gerado diretamente via css</p>
+        <pre>
+            .black-white {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        </pre>
+        <img width="600px" src="../assets/lab2/group.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/group.JPG" alt="" />
+    </div>
 
-    <p>Foto em Preto e Branco</p>
-    <img width="1000px" src="../assets/rangers_grey.png" alt="" />
-    <pre>img_gray = cv.imread(os.path.join(image_path,'rangers_original.png'), cv.IMREAD_GRAYSCALE)
-cv2_imshow(img_gray)</pre>
+    <div>
+        <h3>Fotos em preto e branco</h3>
+        <p>Essas fotos foram tiradas com uma camera profissional e o preto e branco foi gerado diretamente via css</p>
+        <pre>
+            .black-white {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        </pre>
+        <img width="600px" src="../assets/lab2/11010058.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/11010058.JPG" alt="" />
+        <img width="600px" src="../assets/lab2/11010059.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/11010059.JPG" alt="" />
+        <img width="600px" src="../assets/lab2/11010060.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/11010060.JPG" alt="" />
+        <img width="600px" src="../assets/lab2/11010061.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/11010061.JPG" alt="" />
+        <img width="600px" src="../assets/lab2/11010062.JPG" alt="" />
+        <img width="600px" class="black-white" src="../assets/lab2/11010062.JPG" alt="" />
+    </div>
 
     <p>Foto com resolução x1.25</p>
     <img width="1250px" src="../assets/rangers_grey_125.png" alt="" />
