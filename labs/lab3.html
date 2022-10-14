@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório 2</title>
+    <link href="../css/style.css" rel="stylesheet" />
+
+
+
+
+<style>
+a {
+  color: #3da199;
+  background-color: transparent;
+  text-decoration: underline;  
+}
+
+</style>
+</head>
+
+
+<body>
+    <h1><center><font size="18px"><font color="#3da199">Laboratório 3 - </font>Codificação de Imagem por DCT e Animação</font></center></h1>
+	<div><a href="../index.html">Voltar à página inicial</a></div>
+	<br><br>
+	<font color="#3da199"><b>Audiodescrição do relatório:</b></font>
+	<center><table style="width:100%"><tr><td>
+		<center><font color="#3da199">Parte 1</font></center>
+		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio1.ogg" type="audio/mpeg"></audio></center>
+	</td><td>
+		<center><font color="#3da199">Parte 2</font></center>
+		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio2.ogg" type="audio/mpeg"></audio></center>
+	</td><td>
+		<center><font color="#3da199">Parte 3</font></center>
+		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio3.ogg" type="audio/mpeg"></audio></center>
+	</td><td>
+		<center><font color="#3da199">Parte 4</font></center>
+		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio4.ogg" type="audio/mpeg"></audio></center>
+	</td><td>
+		<center><font color="#3da199">Parte 5</font></center>
+		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio5.ogg" type="audio/mpeg"></audio></center>
+	</td></tr></table></center>
+	<br>
+    <div>
+        <h3>Apresentação do Site</h3>
+        <p>A seguir, tem-se o vídeo de apresentação da página gravado na câmera profissional, apresentado, respectivamente, nas resoluções 100%, 50% e 25%. A mudança de resolução foi feita utilizando o Adobe Premiere.</p>
+		<center><table style="width:100%"><tr><td>
+			<center><video width="400px" src="../assets/lab2/Vídeo Cam100.mp4" controls></video></center>
+		  </td><td>
+			<center><video width="400px" src="../assets/lab2/Video Cam50.mp4" controls></video></center>
+		  </td><td>
+			<center><video width="400px" src="../assets/lab2/Video Cam25.mp4" controls></video></center>
+		  </td></tr></table></center>
+		<p>Por sua vez, tem-se o vídeo de apresentação gravado pelo celular, também apresentado nas resoluções 100%, 50% e 25%.</p>
+		<center><table style="width:100%"><tr><td>
+			<center><video width="400px" src="../assets/lab2/VideoGrupoCel 100.mp4" controls></video></center>
+		  </td><td>
+			<center><video width="400px" src="../assets/lab2/VideoGrupoCel_50.mp4" controls></video></center>
+		  </td><td>
+			<center><video width="400px" src="../assets/lab2/VideoGrupoCel_25.mp4" controls></video></center>
+		</td></tr></table></center>		
+    </div>
+	
+	<div>
+        <h3>Fotos com a câmera profissional</h3>
+        <p>As fotos a seguir foram tiradas com a câmera profissional, e suas versões em preto e branco foram geradas diretamente via CSS, utilizando o código:</p>
+        <pre>
+            .black-white {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        </pre>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/11010059.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/11010059.JPG" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/11010061.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/11010061.JPG" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/11010062.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/11010062.JPG" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/11010060.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/11010060.JPG" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/11010058.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/11010058.JPG" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/group.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/group.JPG" alt="" /></center>
+		</td></tr></table></center>
+    </div>
+    <div>
+        <h3>Fotos com o celular e montagem com ícone-avatar</h3>
+        <p>A seguir são apresentadas as montagens elaboradas com o Photoshop, e utilizando as fotos tiradas pelo celular e os ícones-avatares escolhidos. Também tem-se a versão em preto e branco destas imagens, obtidas também via CSS.</p>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/MontagemArthur.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemArthur.jpg" alt="" /></center>
+		</td></tr></table></center>		
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/MontagemDaniel.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemDaniel.jpg" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/MontagemIghor.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemIghor.jpg" alt="" /></center>
+		</td></tr></table></center>	
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/MontagemMariana.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemMariana.jpg" alt="" /></center>
+		</td></tr></table></center>	
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/MontagemVitor.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemVitor.jpg" alt="" /></center>
+		</td></tr></table></center>	
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/lab2/Montagem Grupo.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" class="black-white" src="../assets/lab2/Montagem Grupo.jpg" alt="" /></center>
+		</td></tr></table></center>	
+    </div>
+	
+
+	<div>
+        <h3>Mudança de resolução na foto do grupo</h3>
+        <p>A seguir foi utilizada a foto do grupo, capturada com a câmera profissional, para verificar o efeito da mudança de resolução. A imagem original foi alterada posteriormente e está apresentada nas resoluções 100%, 50% e 25%:</p>
+        <center><table style="width:100%"><tr><td>
+			<center><img width="400px" src="../assets/lab2/group.JPG" alt="" /></center>
+		  </td><td>
+			<center><img width="400px" src="../assets/lab2/GrupoCam 50.jpg" alt="" /></center>
+		  </td><td>
+			<center><img width="400px" src="../assets/lab2/GrupoCam 25.jpg" alt="" /></center>
+		</td></tr></table></center>
+    </div>
+	
+
+	<div>
+        <h3>Vídeos com movimentos rápidos</h3>
+        <p>O vídeo a seguir contém movimentos rápidos e foi gravado com a câmera profissional:</p>
+        <center><table style="width:100%"><tr><td>
+			<center><video width="400px" src="../assets/lab2/VideoMovimentoCamera.mp4" controls></video></center>
+		</td></tr></table></center>
+		<p>O próximo vídeo foi gravado com a câmera do celular:</p>
+        <center><table style="width:100%"><tr><td>
+			<center><video width="400px" src="../assets/lab2/MovimentoCelular.mp4" controls></video></center>
+		</td></tr></table></center>
+    </div>
+
+    
+
+
+<!--
+    <p>Vídeo Lento</p>
+    <video width="600px" src="../assets/lab2/VideoCamera.mp4" controls></video>
+
+    <p>Comando Utilizado:</p>
+    <pre>ffmpeg -i video-lento.mp4 -vf "scale=iw/2:ih/2" output2.mp4</pre>
+
+    <p>Vídeo Rápido</p>
+    <video width="600px" src="../assets/output4.mp4" controls></video>
+
+    <p>Comando Utilizado:</p>
+    <pre>ffmpeg -i video-rapido.mp4 -vf "scale=iw/4:ih/4" output4.mp4</pre>
+	-->
+</body>
+
+</html>
