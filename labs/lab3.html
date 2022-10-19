@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laboratório 2</title>
+    <title>Laboratório 3</title>
     <link href="../css/style.css" rel="stylesheet" />
 
 
@@ -23,9 +23,18 @@ a {
 
 
 <body>
-    <h1><center><font size="18px"><font color="#3da199">Laboratório 3 - </font>Codificação de Imagem por DCT e Animação</font></center></h1>
-	<div><a href="../index.html">Voltar à página inicial</a></div>
-	<br><br>
+    <h1><center><font size="18px"><font color="#3da199">Laboratório 3 - </font>Codificação de Imagem <br> por DCT e Animação pelo Blender</font></center></h1>
+	<!--<div><a href="../index.html">Voltar à página inicial</a></div>-->
+	<br>
+	<center><table style="width:100%"><tr><td style="width: 55%;">
+			<a href="../index.html">Voltar à página inicial</a>
+		</td><td style="width: 20%;">
+			<p align="right"><font color="#3da199"><b>Audiodescrição do relatório:</b></font></p>
+		  </td><td>
+			<p align="right"><audio style="width:350px;height:50px" controls><source src="../assets/lab3/audiodesc.ogg" type="audio/mpeg"></audio></p>
+		</td></tr></table></center>
+	
+	<!--  ESTRUTURA ANTIGA (PARA REFERÊNCIA)
 	<font color="#3da199"><b>Audiodescrição do relatório:</b></font>
 	<center><table style="width:100%"><tr><td>
 		<center><font color="#3da199">Parte 1</font></center>
@@ -42,153 +51,124 @@ a {
 	</td><td>
 		<center><font color="#3da199">Parte 5</font></center>
 		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio5.ogg" type="audio/mpeg"></audio></center>
-	</td></tr></table></center>
-	<br>
+	</td></tr></table></center>-->
+	
     <div>
-        <h3>PARTE 1: Codificação de Imagem por DCT</h3>
+        <h3>PARTE 1: Codificação de Imagem por DCT [MELHORAR TEXTO]</h3>
+		
+		<p> Na primeira parte do experimento, diversas imagens foram codificadas utilizando como referência um código-exemplo do Google Colaboratory, 
+		previamente fornecido. A versão final do notebook utilizado pode ser acessada
+		<a href="https://drive.google.com/file/d/1sAXxM0gA6Mfgp_4CmM7UR9fAc1WjAFqy/view?usp=sharing">aqui</a>. Primeiramente, as fotos individuais e 
+		do grupo, capturadas na prática anterior com a câmera profissional, foram representadas em diferentes sistemas de cores, como apresentado a seguir.</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Sistema RGB:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab3/sistemascores/RGBgeral.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Sistema BGR:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab3/sistemascores/BGRgeral.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Sistema YCrCb:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab3/sistemascores/YCrCbgeral.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Sistema HSV:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab3/sistemascores/HSVgeral.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Em seguida, as mesmas imagens foram separadas em camadas R, G e B:</p>
+		
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/ighorcamadas.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/danielcamadas.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/arthurcamadas.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/maricamadas.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/vitorcamadas.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasRGB/grupocamadas.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>A seguir estão apresentadas as mesmas imagens, separadas em camadas Y, Cr e Cb:</p>
+		
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/ighorYCC.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/danielYCC.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/arthurYCC.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/mariYCC.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/vitorYCC.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/camadasYCC/grupoYCC.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Na etapa seguinte da prática, as mesmas imagens foram comprimidas com fatores de qualidade 25 e 05. Os resultados estão apresentados a seguir:</p>
+		
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/compressao/Ighor_comp.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/compressao/Daniel_comp.png" alt="" /></center>
+		</td></tr></table></center>
 		<center><table style="width:100%"><tr><td>
 			<center><img width="600px" src="../assets/Lab3/compressao/Arthur_comp.png" alt="" /></center>
 		  </td><td>
-			<center><img width="600px" src="../assets/Lab3/compressao/Daniel_comp.png" alt="" /></center>
-		</td></tr></table></center>	
+			<center><img width="600px" src="../assets/Lab3/compressao/Mari_comp.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td>
+			<center><img width="600px" src="../assets/Lab3/compressao/Vitor_comp.png" alt="" /></center>
+		  </td><td>
+			<center><img width="600px" src="../assets/Lab3/compressao/Grupo_comp.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Posteriormente, o tamanho dos arquivos originais e comprimidos foram analisados, a fim de avaliar a compressão em cada um dos casos, como 
+		na tabela:</p>
+		
+		<center><table style="width:85%">
+			<tr><td><center><b>Foto</b></center></td><td><center><b>Tamanho Original (bytes)</b></center></td><td><center><b>Tamanho - Fator 25 (bytes)</b></center></td><td>
+			<center><b>Compressão - Fator 25</b></center></td><td><center><b>Tamanho - Fator 05 (bytes)</b></center></td><td><center><b>Compressão - Fator 05</b></center></td></tr>
+			<tr><td><center>Arthur</center></td><td><center>1220275</center></td><td><center>57366</center></td><td><center>95,30%</center></td><td><center>49123</center></td><td><center>95,97%</center></td></tr>
+			<tr><td><center>Daniel</center></td><td><center>1207000</center></td><td><center>57753</center></td><td><center>95,22%</center></td><td><center>49121</center></td><td><center>95,93%</center></td></tr>
+			<tr><td><center>Ighor</center></td><td><center>1154564</center></td><td><center>54178</center></td><td><center>95,31%</center></td><td><center>48758</center></td><td><center>95,78%</center></td></tr>
+			<tr><td><center>Mariana</center></td><td><center>1210084</center></td><td><center>55243</center></td><td><center>95,43%</center></td><td><center>48616</center></td><td><center>95,98%</center></td></tr>
+			<tr><td><center>Vitor</center></td><td><center>1220870</center></td><td><center>63297</center></td><td><center>94,82%</center></td><td><center>49794</center></td><td><center>95,92%</center></td></tr>
+			<tr><td><center>Grupo</center></td><td><center>1353243</center></td><td><center>80069</center></td><td><center>94,08%</center></td><td><center>52818</center></td><td><center>96,10%</center></td></tr>
+		</table></center>
+		
+		<p>Pode-se observar que os arquivos apresentaram taxas de compressão semelhantes para as duas modalidades, ao passo que a diferença visual é
+		bastante perceptiva. A compressão no fator 05 apresentou uma redução pequena de tamanho em relação ao fator 25, mas com uma grande perda de qualidade 
+		visual. Destaca-se, também, a foto com todos os integrantes do grupo, que teve a menor taxa de compressão para o fator 25, mas a maior para 05.</p>
+        
 		
 		
+    </div>
+	<br>
+	<div>
+        <h3>PARTE 2: Animação pelo Blender [MELHORAR TEXTO]</h3>
+        
+		<p>Na segunda parte desta prática...</p>
 		
-        <p>A seguir, tem-se o vídeo de apresentação da página gravado na câmera profissional, apresentado, respectivamente, nas resoluções 100%, 50% e 25%. A mudança de resolução foi feita utilizando o Adobe Premiere.</p>
-		<center><table style="width:100%"><tr><td>
-			<center><video width="400px" src="../assets/lab2/Vídeo Cam100.mp4" controls></video></center>
-		  </td><td>
-			<center><video width="400px" src="../assets/lab2/Video Cam50.mp4" controls></video></center>
-		  </td><td>
-			<center><video width="400px" src="../assets/lab2/Video Cam25.mp4" controls></video></center>
-		  </td></tr></table></center>
-		<p>Por sua vez, tem-se o vídeo de apresentação gravado pelo celular, também apresentado nas resoluções 100%, 50% e 25%.</p>
-		<center><table style="width:100%"><tr><td>
-			<center><video width="400px" src="../assets/lab2/VideoGrupoCel 100.mp4" controls></video></center>
-		  </td><td>
-			<center><video width="400px" src="../assets/lab2/VideoGrupoCel_50.mp4" controls></video></center>
-		  </td><td>
-			<center><video width="400px" src="../assets/lab2/VideoGrupoCel_25.mp4" controls></video></center>
-		</td></tr></table></center>		
+		<br><br>
+		
     </div>
-	
-	<div>
-        <h3>Fotos com a câmera profissional</h3>
-        <p>As fotos a seguir foram tiradas com a câmera profissional, e suas versões em preto e branco foram geradas diretamente via CSS, utilizando o código:</p>
-        <pre>
-            .black-white {
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
-            }
-        </pre>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/11010059.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/11010059.JPG" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/11010061.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/11010061.JPG" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/11010062.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/11010062.JPG" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/11010060.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/11010060.JPG" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/11010058.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/11010058.JPG" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/group.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/group.JPG" alt="" /></center>
-		</td></tr></table></center>
-    </div>
-    <div>
-        <h3>Fotos com o celular e montagem com ícone-avatar</h3>
-        <p>A seguir são apresentadas as montagens elaboradas com o Photoshop, e utilizando as fotos tiradas pelo celular e os ícones-avatares escolhidos. Também tem-se a versão em preto e branco destas imagens, obtidas também via CSS.</p>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/MontagemArthur.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemArthur.jpg" alt="" /></center>
-		</td></tr></table></center>		
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/MontagemDaniel.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemDaniel.jpg" alt="" /></center>
-		</td></tr></table></center>
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/MontagemIghor.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemIghor.jpg" alt="" /></center>
-		</td></tr></table></center>	
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/MontagemMariana.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemMariana.jpg" alt="" /></center>
-		</td></tr></table></center>	
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/MontagemVitor.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/MontagemVitor.jpg" alt="" /></center>
-		</td></tr></table></center>	
-		<center><table style="width:100%"><tr><td>
-			<center><img width="600px" src="../assets/lab2/Montagem Grupo.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="600px" class="black-white" src="../assets/lab2/Montagem Grupo.jpg" alt="" /></center>
-		</td></tr></table></center>	
-    </div>
-	
-
-	<div>
-        <h3>Mudança de resolução na foto do grupo</h3>
-        <p>A seguir foi utilizada a foto do grupo, capturada com a câmera profissional, para verificar o efeito da mudança de resolução. A imagem original foi alterada posteriormente e está apresentada nas resoluções 100%, 50% e 25%:</p>
-        <center><table style="width:100%"><tr><td>
-			<center><img width="400px" src="../assets/lab2/group.JPG" alt="" /></center>
-		  </td><td>
-			<center><img width="400px" src="../assets/lab2/GrupoCam 50.jpg" alt="" /></center>
-		  </td><td>
-			<center><img width="400px" src="../assets/lab2/GrupoCam 25.jpg" alt="" /></center>
-		</td></tr></table></center>
-    </div>
-	
-
-	<div>
-        <h3>Vídeos com movimentos rápidos</h3>
-        <p>O vídeo a seguir contém movimentos rápidos e foi gravado com a câmera profissional:</p>
-        <center><table style="width:100%"><tr><td>
-			<center><video width="400px" src="../assets/lab2/VideoMovimentoCamera.mp4" controls></video></center>
-		</td></tr></table></center>
-		<p>O próximo vídeo foi gravado com a câmera do celular:</p>
-        <center><table style="width:100%"><tr><td>
-			<center><video width="400px" src="../assets/lab2/MovimentoCelular.mp4" controls></video></center>
-		</td></tr></table></center>
-    </div>
-
     
+	
 
-
-<!--
-    <p>Vídeo Lento</p>
-    <video width="600px" src="../assets/lab2/VideoCamera.mp4" controls></video>
-
-    <p>Comando Utilizado:</p>
-    <pre>ffmpeg -i video-lento.mp4 -vf "scale=iw/2:ih/2" output2.mp4</pre>
-
-    <p>Vídeo Rápido</p>
-    <video width="600px" src="../assets/output4.mp4" controls></video>
-
-    <p>Comando Utilizado:</p>
-    <pre>ffmpeg -i video-rapido.mp4 -vf "scale=iw/4:ih/4" output4.mp4</pre>
-	-->
 </body>
 
 </html>
