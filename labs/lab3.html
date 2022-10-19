@@ -53,7 +53,7 @@ a {
 		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio5.ogg" type="audio/mpeg"></audio></center>
 	</td></tr></table></center>-->
 	
-    <div>
+    <div class="just">
         <h3>PARTE 1: Codificação de Imagem por DCT [MELHORAR TEXTO]</h3>
 		
 		<p> Na primeira parte do experimento, diversas imagens foram codificadas utilizando como referência um código-exemplo do Google Colaboratory, 
@@ -154,9 +154,16 @@ a {
 		bastante perceptiva. A compressão no fator 05 apresentou uma redução pequena de tamanho em relação ao fator 25, mas com uma grande perda de qualidade 
 		visual. Destaca-se, também, a foto com todos os integrantes do grupo, que teve a menor taxa de compressão para o fator 25, mas a maior para 05.</p>
         
+		<p>A etapa seguinte consistiu em aplicar a Transformada Discreta Cosseno (DCT) em um bloco 8x8 da imagem fornecida (messi.jpg). A seguir estão 
+		apresentados a seção da imagem original escolhida para análise, correspondendo ao rosto do jogador, e a imagem comparativa do bloco original 
+		com a reconstrução, após a inserção de zeros na matriz. Nota-se que, mesmo zerando mais duas diagonais da matriz, a reconstrução se aproxima
+		do bloco original, o que mostra sua eficácia.</p>
+		
+		<center><img width="200px" src="../assets/Lab3/reconstrucao/orig.png" alt="" /></center>
+		<center><img width="400px" src="../assets/Lab3/reconstrucao/rosto.png" alt="" /></center>
 		
 		
-    </div>
+    </div class="just">>
 	<br>
 	<div>
         <h3>PARTE 2: Animação pelo Blender [MELHORAR TEXTO]</h3>
