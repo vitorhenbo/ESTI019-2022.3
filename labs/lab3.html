@@ -15,7 +15,7 @@
 a {
   color: #3da199;
   background-color: transparent;
-  text-decoration: underline;  
+  text-decoration: underline;
 }
 
 </style>
@@ -33,7 +33,7 @@ a {
 		  </td><td>
 			<p align="right"><audio style="width:350px;height:50px" controls><source src="../assets/lab3/audiodesc.ogg" type="audio/mpeg"></audio></p>
 		</td></tr></table></center>
-	
+
 	<!--  ESTRUTURA ANTIGA (PARA REFERÊNCIA)
 	<font color="#3da199"><b>Audiodescrição do relatório:</b></font>
 	<center><table style="width:100%"><tr><td>
@@ -52,15 +52,15 @@ a {
 		<center><font color="#3da199">Parte 5</font></center>
 		<center><audio style="width:250px;height:50px" controls><source src="../assets/lab2/audio5.ogg" type="audio/mpeg"></audio></center>
 	</td></tr></table></center>-->
-	
+
     <div class="just">
         <h3>PARTE 1: Codificação de Imagem por DCT [MELHORAR TEXTO]</h3>
-		
-		<p> Na primeira parte do experimento, diversas imagens foram codificadas utilizando como referência um código-exemplo do Google Colaboratory, 
+
+		<p> Na primeira parte do experimento, diversas imagens foram codificadas utilizando como referência um código-exemplo do Google Colaboratory,
 		previamente fornecido. A versão final do notebook utilizado pode ser acessada
-		<a href="https://drive.google.com/file/d/1sAXxM0gA6Mfgp_4CmM7UR9fAc1WjAFqy/view?usp=sharing">aqui</a>. Primeiramente, as fotos individuais e 
+		<a href="https://drive.google.com/file/d/1sAXxM0gA6Mfgp_4CmM7UR9fAc1WjAFqy/view?usp=sharing">aqui</a>. Primeiramente, as fotos individuais e
 		do grupo, capturadas na prática anterior com a câmera profissional, foram representadas em diferentes sistemas de cores, como apresentado a seguir.</p>
-		
+
 		<center><table style="width:100%"><tr><td style="width: 130px;">
 			<b><font color="#3da199">Sistema RGB:</font></b>
 		  </td><td>
@@ -81,9 +81,9 @@ a {
 		  </td><td>
 			<center><img width="1200px" src="../assets/Lab3/sistemascores/HSVgeral.png" alt="" /></center>
 		</td></tr></table></center>
-		
+
 		<p>Em seguida, as mesmas imagens foram separadas em camadas R, G e B:</p>
-		
+
 		<center><table style="width:100%"><tr><td>
 			<center><img width="600px" src="../assets/Lab3/camadasRGB/ighorcamadas.png" alt="" /></center>
 		  </td><td>
@@ -99,9 +99,9 @@ a {
 		  </td><td>
 			<center><img width="600px" src="../assets/Lab3/camadasRGB/grupocamadas.png" alt="" /></center>
 		</td></tr></table></center>
-		
+
 		<p>A seguir estão apresentadas as mesmas imagens, separadas em camadas Y, Cr e Cb:</p>
-		
+
 		<center><table style="width:100%"><tr><td>
 			<center><img width="600px" src="../assets/Lab3/camadasYCC/ighorYCC.png" alt="" /></center>
 		  </td><td>
@@ -117,9 +117,9 @@ a {
 		  </td><td>
 			<center><img width="600px" src="../assets/Lab3/camadasYCC/grupoYCC.png" alt="" /></center>
 		</td></tr></table></center>
-		
+
 		<p>Na etapa seguinte da prática, as mesmas imagens foram comprimidas com fatores de qualidade 25 e 05. Os resultados estão apresentados a seguir:</p>
-		
+
 		<center><table style="width:100%"><tr><td>
 			<center><img width="600px" src="../assets/Lab3/compressao/Ighor_comp.png" alt="" /></center>
 		  </td><td>
@@ -135,10 +135,10 @@ a {
 		  </td><td>
 			<center><img width="600px" src="../assets/Lab3/compressao/Grupo_comp.png" alt="" /></center>
 		</td></tr></table></center>
-		
-		<p>Posteriormente, o tamanho dos arquivos originais e comprimidos foram analisados, a fim de avaliar a compressão em cada um dos casos, como 
+
+		<p>Posteriormente, o tamanho dos arquivos originais e comprimidos foram analisados, a fim de avaliar a compressão em cada um dos casos, como
 		na tabela:</p>
-		
+
 		<center><table style="width:85%">
 			<tr><td><center><b>Foto</b></center></td><td><center><b>Tamanho Original (bytes)</b></center></td><td><center><b>Tamanho - Fator 25 (bytes)</b></center></td><td>
 			<center><b>Compressão - Fator 25</b></center></td><td><center><b>Tamanho - Fator 05 (bytes)</b></center></td><td><center><b>Compressão - Fator 05</b></center></td></tr>
@@ -149,60 +149,60 @@ a {
 			<tr><td><center>Vitor</center></td><td><center>1220870</center></td><td><center>63297</center></td><td><center>94,82%</center></td><td><center>49794</center></td><td><center>95,92%</center></td></tr>
 			<tr><td><center>Grupo</center></td><td><center>1353243</center></td><td><center>80069</center></td><td><center>94,08%</center></td><td><center>52818</center></td><td><center>96,10%</center></td></tr>
 		</table></center>
-		
+
 		<p>Pode-se observar que os arquivos apresentaram taxas de compressão semelhantes para as duas modalidades, ao passo que a diferença visual é
-		bastante perceptiva. A compressão no fator 05 apresentou uma redução pequena de tamanho em relação ao fator 25, mas com uma grande perda de qualidade 
+		bastante perceptiva. A compressão no fator 05 apresentou uma redução pequena de tamanho em relação ao fator 25, mas com uma grande perda de qualidade
 		visual. Destaca-se, também, a foto com todos os integrantes do grupo, que teve a menor taxa de compressão para o fator 25, mas a maior para 05.</p>
-        
-		<p>A etapa seguinte consistiu em aplicar a Transformada Discreta Cosseno (DCT) em um bloco 8x8 da imagem fornecida (messi.jpg). A seguir estão 
-		apresentados a seção da imagem original escolhida para análise, correspondendo ao rosto do jogador, e a imagem comparativa do bloco original 
+
+		<p>A etapa seguinte consistiu em aplicar a Transformada Discreta Cosseno (DCT) em um bloco 8x8 da imagem fornecida (messi.jpg). A seguir estão
+		apresentados a seção da imagem original escolhida para análise, correspondendo ao rosto do jogador, e a imagem comparativa do bloco original
 		com a reconstrução, após a inserção de zeros na matriz. Nota-se que, mesmo zerando mais duas diagonais da matriz, a reconstrução se aproxima
 		do bloco original, o que mostra sua eficácia.</p>
-		
+
 		<center><img width="200px" src="../assets/Lab3/reconstrucao/orig.png" alt="" /></center>
 		<center><img width="400px" src="../assets/Lab3/reconstrucao/rosto.png" alt="" /></center>
-		
-		
+
+
     </div class="just">
 	<br>
 	<div>
         <h3>PARTE 2: Animação pelo Blender</h3>
-        
+
 		<p>Na segunda parte desta prática, o grupo criou uma animação através do software Blender</p>
-		
+
 		<p>Seguindo uma vídeo aula produzida pelo Professor Minami, foram executados os passos a seguir para a produção de uma breve animação, contendo um
 		texto escolhido pelo grupo, bem como um áudio fornecido pelo Professor Celso.</p>
-		
+
 		<p>Inicialmente, o software e suas ferramentas mais básicas foram apresentados. Dentre elas, a tela de visualização com os elementos que a compõem,
 		como o plano onde os objetos serão plotados, a fonte de luz que iluminará os objetos na cena e a câmera, que define o ângulo de visualização final
 		da animação, bem como o zoom, enquadramento, distância, entre outros parâmetros.</p>
-		
+
 		<p> Após uma breve introdução do software, iniciamos com a escolha do objeto que faria parte da animação. No caso, foram escolhidos dois textos: "CSM 2022.3"
 		e "Lab 3" que teriam movimentos independentes um do outro.</p>
-		
+
 		<p>Escolhido o objeto, escolhemos também um plano para situar toda a cena. Para isso, utilizamos um quadrado bidimensional para servir de base para os objetos</p>
-		
+
 		<p>A etapa seguinte consistia de escolher as características e parâmetros de todos esses objetos. Foram definidos então o tamanho, relevo, inclinação e rotação de
 		cada um dos objetos, bem como a direção para qual eles estariam apontados, baseado na posição da câmera, buscando obter a melhor visualização possível.</p>
-		
+
 		<p>As etapas anteriores foram, de certa forma preparatórias para esta etapa: a de criar os movimentos de cada objeto. Na vídeo-aula, o professor Minami mostra como
 		demarcar os pontos de animação, ou seja, pontos na linha do tempo da animação nos quais determinamos a posição, rotação e tamanho dos objetos. Criando uma série de
 		pontos ao longo da linha do tempo, e variando tais parâmetros, criamos os movimentos desejados dos objetos na animação</p>
-		
-		
+
+
 		<center>
 			<iframe width="600" height="400" src="https://www.youtube.com/embed/6ssG4ysLoSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</center>
-		
+
 		<p>Para essa animação, a intenção foi que o objeto "CSM 2022.3" surgisse, se movimentasse ao longo da base, e logo após saísse de cena, como se fosse empurrado pelo
-		objeto "Lab 3". Para isso, foi necessário criar os movimentos de cada um dos objetos separados e sincronizá-los na timeline, para que produzisse a sensação de que 
+		objeto "Lab 3". Para isso, foi necessário criar os movimentos de cada um dos objetos separados e sincronizá-los na timeline, para que produzisse a sensação de que
 		estivessem interagindo um com o outro<p/>
-			
+
 		<br><br>
-		
+
     </div>
-    
-	
+
+
 
 </body>
 
