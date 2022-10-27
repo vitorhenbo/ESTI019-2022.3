@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório 4</title>
+    <link href="../css/style.css" rel="stylesheet" />
+
+
+
+
+<style>
+a {
+  color: #3da199;
+  background-color: transparent;
+  text-decoration: underline;  
+}
+
+</style>
+</head>
+
+
+<body>
+    <h1><center><font size="18px"><font color="#3da199">Laboratório 4 - </font>Codificação de Imagem <br> com DWT</font></center></h1>
+	<!--<div><a href="../index.html">Voltar à página inicial</a></div>-->
+	<br>
+	<center><table style="width:100%"><tr><td style="width: 55%;">
+			<a href="../index.html">Voltar à página inicial</a>
+		</td><td style="width: 20%;">
+			<p align="right"><font color="#3da199"><b>Audiodescrição do relatório:</b></font></p>
+		  </td><td>
+			<p align="right"><audio style="width:350px;height:50px" controls><source src="../assets/Lab4/audiodesc.ogg" type="audio/mpeg"></audio></p>
+		</td></tr></table></center>
+	
+    <div class="just">
+        <h3>Codificação de Luminância</h3>
+		
+		<p> Na primeira parte do experimento, foi realizada a codificação de luminância para uma imagem de exemplo e para as imagens de cada um dos membros do grupo. A versão final do notebook utilizado  para isso pode ser acessada
+		<a href="https://drive.google.com/file/d/1sAXxM0gA6Mfgp_4CmM7UR9fAc1WjAFqy/view?usp=sharing">aqui</a>. Os resultados da codificação de luminância com 1 nível de DWT estão apresentados abaixo. A primeira imagem é a aproximação, a segunda sao as bordas verticais, a terceira as bordas horizontais e a quarta as bordas diagonais.</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/1-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Em seguida, foi calculada a MSE em preto em branco das imagens e obtida a imagem reconstruída de luminância.</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/2-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Depois, foram aplicadas as funções de resolução multiresolução wavedec2 e waverec2 nas imagens obtendo as imagens com dois níveis de decomposição DWT. Abaixo estão apresentadas a aproximação, as bordas verticais, horizontais e diagonais.</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/3-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Abaixo estao as imagens originais e a reconstrucao da decomposição em dois níveis de DWT :</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Posteriormente, foi feita uma montagem utilizando as funções wavedec2 e wavedevcn:</p>
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/5-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+
+		<p>Abaixo estao as imagens originais e a reconstrucao da decomposicao em dois níveis de DWT :</p>
+		
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/4-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		
+		<p>Após isso foi realizada a reconstrução colorida das imagens. Abaixo estao apresentadas as imagens codificadas por planos de cores, na ordem vermelho, verde e azul</p>
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/red-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/green-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/blue-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+
+<p>Após isso, a imagem com DWT nível 1 foi reconstruída. Os resultados estão apresentados abaixo:</p>
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/6-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+
+<p>Por fim, foi realizada a reconstrução da imagem colorida e calculada a PSNR de cada uma.</p>
+<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Pimentas</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-pepper.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Arthur:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-arthur.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Daniel:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-daniel.png" alt="" /></center>
+		</td></tr></table></center>
+		<center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Ighor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-ighor.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Mariana:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-mariana.png" alt="" /></center>
+		</td></tr></table></center>
+        <center><table style="width:100%"><tr><td style="width: 130px;">
+			<b><font color="#3da199">Vitor:</font></b>
+		  </td><td>
+			<center><img width="1200px" src="../assets/Lab4/7-vitor.png" alt="" /></center>
+		</td></tr></table></center>
+		<p>Abaixo estão os valores do tamanho das imagens antes e depois da decomposição e a PSNR total obtida.</p>		
+		<center><table style="width:85%">
+			<tr><td><center><b>Foto</b></center></td><td><center><b>Tamanho Original (KB)</b></center></td><td><center><b>Tamanho - DWT Nível 1 (bytes)</b></center></td><td>
+			<center><b>PSNR total (dB)</b></center></td><td></tr>
+			<tr><td><center>Arthur</center></td><td><center>3415</center></td><td><center>747</center></td><td><center>162.64</center></td></tr>
+			<tr><td><center>Daniel</center></td><td><center>3378</center></td><td><center>747</center></td><td><center>162.56</center></td></tr>
+			<tr><td><center>Ighor</center></td><td><center>3322</center></td><td><center>747</center></td><td><center>162.48</center></td></tr>
+			<tr><td><center>Mariana</center></td><td><center>3459</center></td><td><center>747</center></td><td><center>162.42</center></td></tr>
+			<tr><td><center>Vitor</center></td><td><center>3492</center></td><td><center>747</center></td><td><center>162.60</center></td></tr>
+			<tr><td><center>Grupo</center></td><td><center>1353243</center></td><td><center>80069</center></td><td><center>94,08%</center></td></tr>
+		</table></center>
+		
+		
+		
+    </div class="just"> 
+
+</body>
+
+</html>
