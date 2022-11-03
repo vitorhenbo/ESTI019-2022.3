@@ -195,3 +195,18 @@ p {
 .listapar{
 	text-indent: 4ch;
 }
+
+.table bordatab {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.td bordatab {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.tr bordatab {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
