@@ -195,3 +195,29 @@ p {
 .listapar{
 	text-indent: 4ch;
 }
+
+
+
+
+.collapsible {
+  background-color: #3da199;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #3da199;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #d5ebe8;
+}
