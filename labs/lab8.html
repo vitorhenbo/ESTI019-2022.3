@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório 8</title>
+    <link href="../css/style.css" rel="stylesheet" />
+
+
+
+
+<style>
+a {
+  color: #3da199;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+
+<body>
+    <h1><center><font size="18px"><font color="#3da199">Laboratório 8 - </font>Codificação de Áudio</font></center></h1>
+
+	<br>
+	<center><table style="width:100%"><tr><td style="width: 55%;">
+			<a href="../index.html">Voltar à página inicial</a>
+		</td><td style="width: 20%;">
+			<p align="right"><font color="#3da199"><b>Audiodescrição do relatório:</b></font></p>
+		  </td><td>
+			<p align="right"><audio style="width:350px;height:50px" controls><source src="../assets/Lab5/audiodesc.ogg" type="audio/mpeg"></audio></p>
+		</td></tr></table></center>
+
+    <div class="just">
+
+
+		<!---
+		<br>
+        <h3>Parte 1: Separação de uma Estrofe</h3>
+
+		<p> Para este experimento, foram utilizados os arquivos de voz gravados anteriormente por cada integrante, disponibilizados a seguir. Além disso,
+		as análises foram feitas utilizando um arquivo do Google Colab previamente disponibilizado. </p>
+
+		<center><table style="width:100%">
+			<tr><td><center><b>Arthur</b></center></td><td><center><b>Daniel</b></center></td><td><center><b>Ighor</b></center></td><td><center><b>Mariana</b></center></td><td><center><b>Vitor</b></center></td></tr>
+			<tr><td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Arthur.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Daniel.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/fraseIghor.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Mariana.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Vitor.wav" type="audio/mpeg"></audio></center></td></tr>
+		</table></center>
+
+		<p> Com isso, é possível traçar o gráfico com a onda sonora completa, além da janela de Hamming, como apresentados a seguir. </p>
+
+		<center><table style="width:85%" border="1">
+			<tr><td style="width:10%"><center><b>Integrante</b></center></td><td><center><b>Onda de som completa</b></center></td><td><center><b>Janela de Hamming</b></center></td></tr>
+			<tr><td><center><b>Arthur</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Arthur.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Arthur.png" alt="" /></b></center></td></tr>
+			<tr><td><center><b>Daniel</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Daniel.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Daniel.png" alt="" /></b></center></td></tr>
+			<tr><td><center><b>Ighor</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Ighor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Ighor.png" alt="" /></b></center></td></tr>
+			<tr><td><center><b>Mariana</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Mariana.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Mariana.png" alt="" /></b></center></td></tr>
+			<tr><td><center><b>Vitor</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Vitor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Vitor.png" alt="" /></b></center></td></tr>
+		</table></center>
+
+		<p> Em seguida, a primeira frase da estrofe foi isolada para análise. A seguir estão apresentados os trechos isolados das falas, juntamente com as
+		respesctivas formas de onda. </p>
+
+		<center><table style="width:100%">
+			<tr><td><center><b>Arthur</b></center></td><td><center><b>Daniel</b></center></td><td><center><b>Ighor</b></center></td><td><center><b>Mariana</b></center></td><td><center><b>Vitor</b></center></td></tr>
+			<tr><td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoArthur.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoDaniel.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoIghor.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoMariana.wav" type="audio/mpeg"></audio></center></td>
+			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoVitor.wav" type="audio/mpeg"></audio></center></td></tr>
+			<tr><td><center><img width="250px" src="../assets/Lab7/plots/plot3Arthur.png" alt="" /></center></td>
+			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Daniel.png" alt="" /></center></td>
+			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Ighor.png" alt="" /></center></td>
+			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Mariana.png" alt="" /></center></td>
+			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Vitor.png" alt="" /></center></td></tr>
+		</table></center>
+
+		<br>
+        <h3>Parte 2: Cálculo dos Parâmetros LPC, separação U/UV e Espectro + Envoltória LPC</h3>
+
+		<p> Nesta etapa, foi definido um limiar de atividade VAD para cada arquivo de voz, a partir do gráfico de energia de voz. Com isso,
+		foram obtidos também os limiares U/UV, ajustados para 30% do máximo. Com isso, foi possível identificar os segmentos sonoros (voiced) e
+		surdos (unvoiced).
+
+		<center><table style="width:95%" border="1">
+			<tr><td><center><b>Integrante</b></center></td><td><center><b>Limiar VAD</b></center></td><td><center><b>Limiar U/UV</b></center></td><td><center><b>Quantidade de<br>Segmentos Sonoros</b></center></td><td><center><b>Quantidade de<br>Segmentos Surdos</b></center></td><td><center><b>Gráfico de Energia da Voz</b></center></td></tr>
+			<tr><td><center><b>Arthur</b></center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot4Arthur.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Daniel</b></center></td><td><center>13,444</center></td><td><center>18,144</center></td><td><center>23</center></td><td><center>13</center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot4Daniel.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Ighor</b></center></td><td><center>21,2018</center></td><td><center>23,9018</center></td><td><center>16</center></td><td><center>16</center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot4Ighor.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Mariana</b></center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot4Mariana.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Vitor</b></center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center>-</center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot4Vitor.png" alt="" /></center></td></tr>
+		</table></center>
+
+		<br><br>
+		<button type="button" class="collapsible"><b>Segmentos Sonoros (Detalhe) &#x21E9 </b></button>
+		<div class="content">
+		<br>
+		<center><table style="width:85%" border="1">
+			<tr><td style="width:10%"><center><b>Integrante</b></center></td><td><center><b>Gráficos dos Segmentos Sonoros</b></center></td></tr>
+			<tr><td><center><b>Arthur</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot5Arthur.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Daniel</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot5Daniel.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Ighor</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plotSegmentoIghor.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Mariana</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot5Mariana.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Vitor</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot5Vitor.png" alt="" /></center></td></tr>
+		</table></center>
+		<br>
+		</div>
+		<br><br>
+		<button type="button" class="collapsible"><b>Segmentos Surdos (Detalhe) &#x21E9 </b></button>
+		<div class="content">
+		<br>
+		<center><table style="width:85%" border="1">
+			<tr><td style="width:10%"><center><b>Integrante</b></center></td><td><center><b>Gráficos dos Segmentos Surdos</b></center></td></tr>
+			<tr><td><center><b>Arthur</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot6Arthur.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Daniel</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot6Daniel.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Ighor</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/segmentoIghor.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Mariana</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot6Mariana.png" alt="" /></center></td></tr>
+			<tr><td><center><b>Vitor</b></center></td><td><center><img width="1000px" src="../assets/Lab7/plots/plot6Vitor.png" alt="" /></center></td></tr>
+		</table></center>
+		<br>
+		</div>
+		<br><br>
+
+		<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.display === "block") {
+			  content.style.display = "none";
+			} else {
+			  content.style.display = "block";
+			}
+		  });
+		}
+		</script>
+
+		<h3>Parte 3: Estimação da f<sub>0</sub> e do Pitch</h3>
+
+		<p> Na última etapa, foram analisadas as trajetórias de f<sub>0</sub> (utilizando algoritmo de pYIN) e do Pitch. Além disso, foi gerado um espectograma
+		para enfatizar a frequência fundamental f<sub>0</sub> (em azul) para todas as gravações do grupo. Para a gravação fornecida como exemplo, f<sub>0</sub>
+		era, aproximadamente, de 256 Hz.
+
+		<center><table style="width:100%" border="1">
+			<tr><td style="width:10%"><center><b>Integrante</b></center></td><td><center><b>Trajetória de f<sub>0</sub></b></center></td><td><center><b>Trajetória do Pitch</b></center></td><td><center><b>Espectograma</b></center></td><td><center><b>f<sub>0</sub> (espectograma)</b></center></td></tr>
+			<tr><td><center><b>Arthur</b></center></td><td><center><img width="300px" src="../assets/Lab7/plots/plot7Arthur.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot8Arthur.png" alt="" /></b></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot9Arthur.png" alt="" /></b></center></td><td><center><b>-</b></center></td></tr>
+			<tr><td><center><b>Daniel</b></center></td><td><center><img width="300px" src="../assets/Lab7/plots/plot7Daniel.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot8Daniel.png" alt="" /></b></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot9Daniel.png" alt="" /></b></center></td><td><center><b>128 Hz</b></center></td></tr>
+			<tr><td><center><b>Ighor</b></center></td><td><center><img width="300px" src="../assets/Lab7/plots/plot5Ighor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot6Ighor.png" alt="" /></b></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot7Ighor.png" alt="" /></b></center></td><td><center><b>200 Hz</b></center></td></tr>
+			<tr><td><center><b>Mariana</b></center></td><td><center><img width="300px" src="../assets/Lab7/plots/plot7Mariana.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot8Mariana.png" alt="" /></b></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot9Mariana.png" alt="" /></b></center></td><td><center><b>-</b></center></td></tr>
+			<tr><td><center><b>Vitor</b></center></td><td><center><img width="300px" src="../assets/Lab7/plots/plot7Vitor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot8Vitor.png" alt="" /></b></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot9Vitor.png" alt="" /></b></center></td><td><center><b>-</b></center></td></tr>
+		</table></center>
+
+
+
+		<br><br>
+		-->
+
+    </div>
+
+
+
+
+</body>
+
+</html>
