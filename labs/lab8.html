@@ -37,51 +37,37 @@ a {
     <div class="just">
 
 
-		<!---
+		-
 		<br>
-        <h3>Parte 1: Separação de uma Estrofe</h3>
+        <h3>Parte 1: Gerar audio full para uma faixa de um CD</h3>
 
-		<p> Para este experimento, foram utilizados os arquivos de voz gravados anteriormente por cada integrante, disponibilizados a seguir. Além disso,
-		as análises foram feitas utilizando um arquivo do Google Colab previamente disponibilizado. </p>
+		<p> Para este experimento, foi utilizado a música We are the Champions da banda Queen.</p>
+
+		<center><audio style="width:250px;height:30px" controls><source src="../assets/Lab8/queen_full.wav" type="audio/mpeg"></audio></center>
+
+		<p> Com isso, é possível gerar o espectograma do audio original </p>
+
+		<center><b><img width="700px" src="../assets/Lab8/espectograma1.png" alt="" /></b></center>
+
+		<p> Em seguida, é possível gerar a codificação utilizando os parâmetros -q:a N </p>
 
 		<center><table style="width:100%">
-			<tr><td><center><b>Arthur</b></center></td><td><center><b>Daniel</b></center></td><td><center><b>Ighor</b></center></td><td><center><b>Mariana</b></center></td><td><center><b>Vitor</b></center></td></tr>
-			<tr><td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Arthur.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Daniel.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/fraseIghor.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Mariana.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/Frase1Vitor.wav" type="audio/mpeg"></audio></center></td></tr>
+			<tr><td><center><b>-q:a 9</b></center></td><td><center><b>-q:a 0</b></center></td><td><center><b>-q:a 2</b></center></td><td><center><b>-q:a 5</b></center></td></tr>
+			<tr><td><center><img width="400px" src="../assets/Lab8/espectograma2.png" alt="" /></center></td>
+			<td><center><img width="400px" src="../assets/Lab8/espectograma3.png" alt="" /></center></td>
+			<td><center><img width="400px" src="../assets/Lab8/espectograma4.png" alt="" /></center></td>
+			<td><center><img width="400px" src="../assets/Lab8/espectograma5.png" alt="" /></center></td></tr>
 		</table></center>
 
-		<p> Com isso, é possível traçar o gráfico com a onda sonora completa, além da janela de Hamming, como apresentados a seguir. </p>
-
-		<center><table style="width:85%" border="1">
-			<tr><td style="width:10%"><center><b>Integrante</b></center></td><td><center><b>Onda de som completa</b></center></td><td><center><b>Janela de Hamming</b></center></td></tr>
-			<tr><td><center><b>Arthur</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Arthur.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Arthur.png" alt="" /></b></center></td></tr>
-			<tr><td><center><b>Daniel</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Daniel.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Daniel.png" alt="" /></b></center></td></tr>
-			<tr><td><center><b>Ighor</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Ighor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Ighor.png" alt="" /></b></center></td></tr>
-			<tr><td><center><b>Mariana</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Mariana.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Mariana.png" alt="" /></b></center></td></tr>
-			<tr><td><center><b>Vitor</b></center></td><td><center><img width="600px" src="../assets/Lab7/plots/plot1Vitor.png" alt="" /></center></td><td><center><b><img width="300px" src="../assets/Lab7/plots/plot2Vitor.png" alt="" /></b></center></td></tr>
+		<center><table style="width:95%" border="1">
+			<tr><td><center><b>Audio</b></center></td><td><center><b>Tamanho do arquivo (bytes)</b></center></td></tr>
+			<tr><td><center><b>-q:a 0</b></center></td><td><center>5369391</center></td></tr>
+			<tr><td><center><b>-q:a 2</b></center></td><td><center>4015706</center></td></tr>
+			<tr><td><center><b>-q:a 5</b></center></td><td><center>2763294</center></td></tr>
+			<tr><td><center><b>-q:a 9</b></center></td><td><center>1646823</center></td></tr>
 		</table></center>
 
-		<p> Em seguida, a primeira frase da estrofe foi isolada para análise. A seguir estão apresentados os trechos isolados das falas, juntamente com as
-		respesctivas formas de onda. </p>
-
-		<center><table style="width:100%">
-			<tr><td><center><b>Arthur</b></center></td><td><center><b>Daniel</b></center></td><td><center><b>Ighor</b></center></td><td><center><b>Mariana</b></center></td><td><center><b>Vitor</b></center></td></tr>
-			<tr><td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoArthur.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoDaniel.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoIghor.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoMariana.wav" type="audio/mpeg"></audio></center></td>
-			<td><center><audio style="width:250px;height:30px" controls><source src="../assets/Lab7/trechoVitor.wav" type="audio/mpeg"></audio></center></td></tr>
-			<tr><td><center><img width="250px" src="../assets/Lab7/plots/plot3Arthur.png" alt="" /></center></td>
-			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Daniel.png" alt="" /></center></td>
-			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Ighor.png" alt="" /></center></td>
-			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Mariana.png" alt="" /></center></td>
-			<td><center><img width="250px" src="../assets/Lab7/plots/plot3Vitor.png" alt="" /></center></td></tr>
-		</table></center>
-
-		<br>
+		<!-- <br>
         <h3>Parte 2: Cálculo dos Parâmetros LPC, separação U/UV e Espectro + Envoltória LPC</h3>
 
 		<p> Nesta etapa, foi definido um limiar de atividade VAD para cada arquivo de voz, a partir do gráfico de energia de voz. Com isso,
@@ -161,8 +147,8 @@ a {
 
 
 
-		<br><br>
-		-->
+		<br><br> -->
+
 
     </div>
 
